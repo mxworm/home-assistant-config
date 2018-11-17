@@ -15,10 +15,10 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
+  latitude: !secret hass_latitude
+  longitude: !secret hass_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: !secret elevation
+  elevation: !secret hass_elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -83,7 +83,7 @@ weather:
     name: Graz
   - platform: darksky
     name: Graz
-    api_key: !secret darksky
+    api_key: !secret darksky_key
     mode: daily
 
 #camera:
