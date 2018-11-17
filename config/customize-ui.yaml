@@ -1,0 +1,37 @@
+# Customize_glob UI
+
+#"*.*":
+#  custom_ui_state_card: custom-ui
+#"*.*":
+#  custom_ui_state_card: state-card-custom-ui
+
+alarm_control_panel.*:
+  state_card_custom_ui_secondary: state-card-custom_alarm
+  state_card_mode: badges
+
+sensor.*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+binary_sensor.*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+  show_last_changed: true
+climate.wohnzimme_*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+sensor.schlafzimmer_*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+sensor.kinderzimmer_*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+sensor.badezimmer_*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+sensor.kueche_*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges
+
+sensor.speedtest_*:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: badges

@@ -1,0 +1,27 @@
+
+group.wetter:
+  order: 1
+group.wohnung:
+  order: 2
+group.balkon:
+  order: 3
+group.wohnzimmer:
+  order: 4
+group.schlafzimmer:
+  order: 5
+group.kinderzimmer:
+  order: 6
+group.badezimmer:
+  order: 7
+group.kueche:
+  order: 8
+
+
+light.wohnzimmer_licht:
+  extra_data_template: "${attributes.power_consumption !== undefined ? (attributes.power_consumption + 'W') : ''}"
+
+light.gang_licht:
+  extra_data_template: "${attributes.power_consumption !== undefined ? (attributes.power_consumption + 'W') : ''}"
+
+binary_sensor.gang_motion:
+  extra_data_template: ${ moment.unix( parseInt( (Date.now() - (parseInt(attributes.last_tripped_time) * 1000)) / 1000 ) ).fromNow() }

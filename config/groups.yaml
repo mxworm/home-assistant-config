@@ -1,0 +1,104 @@
+# Views
+#default_view:
+home:
+  name: Wohnung
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.wetter
+    - group.wohnung
+    - group.balkon
+    - group.wohnzimmer
+    - group.schlafzimmer
+    - group.kinderzimmer
+    - group.badezimmer
+    - group.kueche
+
+# Groups
+wetter:
+  entities:
+    - weather.dark_sky
+
+balkon:
+  name: Balkon
+  entities:
+    - sensor.balkon_temperature
+    - sensor.balkon_humidity
+
+wohnung:
+  name: Wohnung
+  entities:
+    - alarm_control_panel.internal
+    - alarm_control_panel.external
+    - light.gang_licht
+    - binary_sensor.wohnungstuer
+    - binary_sensor.gang_smoke
+    - sensor.gang_illuminance
+    - binary_sensor.gang_motion
+
+wohnzimmer:
+  name: Wohnzimmer
+  entities:
+    - light.wohnzimmer_licht
+    - climate.wohnzimmer
+    - sensor.wohnzimmer_temperature
+    - sensor.wohnzimmer_humidity
+    - sensor.wohnzimmer_heating
+    - sensor.wohnizmmer_illuminance
+    - sensor.wohnzimmer_motion
+
+kinderzimmer:
+  name: Kinderzimmer
+  entities:
+    - switch.kinderzimmer_nachtlicht
+    - climate.kinderzimmer
+    - sensor.kinderzimmer_temperature
+    - sensor.kinderzimmer_humidity
+    - sensor.kinderzimmer_heating
+
+kueche:
+  name: Küche
+  entities:
+    - climate.kueche
+    - sensor.kueche_temperature
+    - sensor.kueche_humidity
+    - sensor.kueche_heating
+    - binary_sensor.water_sensor
+
+badezimmer:
+  name: Badezimmer
+  entities:
+    - climate.badezimmer
+    - sensor.badezimmer_temperature
+    - sensor.badezimmer_humidity
+    - sensor.badezimmer_heating
+
+schlafzimmer:
+  name: Schlafzimmer
+  entities:
+    - light.schlafzimmer_licht
+    - climate.schlafzimmer
+    - sensor.schlafzimmer_temperature
+    - sensor.schlafzimmer_humidity
+    - sensor.schlafzimmer_heating
+
+dachboden:
+  name: Dachboden
+  entities:
+    - binary_sensor.dachboden_schachtel
+
+info:
+  name: HomeAssistant
+  entities:
+    - sensor.access_point
+    - sensor.current_version
+
+system:
+  name: Infos
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - sensor.disk_use_percent_
+    - sensor.processor_use
+    - sensor.last_boot
