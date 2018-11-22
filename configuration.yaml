@@ -110,5 +110,5 @@ group: !include config/groups.yaml
 automation: !include config/automations.yaml
 script: !include config/scripts.yaml
 sensor: !include config/sensors.yaml
-variable: !include config/variable.yaml
+#variable: !include config/variable.yaml
 device_tracker: !include config/device_tracker.yaml

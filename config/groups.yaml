@@ -76,7 +76,6 @@ badezimmer:
 schlafzimmer:
   name: Schlafzimmer
   entities:
-    - light.schlafzimmer_licht
     - climate.schlafzimmer
     - sensor.schlafzimmer_temperature
     - sensor.schlafzimmer_humidity
