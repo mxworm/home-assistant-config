@@ -1,4 +1,4 @@
-# Home Assistant configuration
+# Home Assistant Configuration
 # Mattias@Welponer.net
 
 logger:
@@ -82,7 +82,7 @@ weather:
   - platform: yweather
     name: Graz
   - platform: darksky
-    name: Graz
+    name: darksky_graz
     api_key: !secret darksky_key
     mode: daily
 

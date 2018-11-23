@@ -1,5 +1,6 @@
+# Groups
+
 # Views
-#default_view:
 home:
   name: Wohnung
   view: yes
@@ -17,7 +18,7 @@ home:
 # Groups
 wetter:
   entities:
-    - weather.dark_sky
+    - weather.darksky_graz
 
 balkon:
   name: Balkon
