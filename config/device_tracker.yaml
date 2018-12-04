@@ -5,7 +5,9 @@
     router: 10.0.0.1
     igray: 10.0.0.10
     iblue: 10.0.0.11
+
 - platform: bluetooth_le_tracker
+  track_new_devices: True
 
 - platform: tile
   username: !secret tile_user

@@ -4,11 +4,8 @@
 logger:
   default: warning
   logs:
-    homeassistant.components.homematicip_cloud: debug
-    homeassistant.components.sensor.homematicip_cloud: debug
-    homeassistant.components.climate.homematicip_cloud: debug
-    homeassistant.components.light.homematicip_cloud: debug
-    homeassistant.components.switch.homematicip_cloud: debug
+    homeassistant.components.homematicip_cloud: info
+    homeassistant.components.device_tracker: debug
 
 # Configuration
 homeassistant:
@@ -100,8 +97,17 @@ cloud:
 
 history_graph:
   balkon_graph:
+    name: Balkon Temperatur
     entities:
       - sensor.balkon_temperature
+    hours_to_show: 48
+    refresh: 60
+  wohnung_graph:
+    name: Wohnung Temperatur
+    entities:
+      - sensor.wohnzimmer_temperature
+      - sensor.kinderzimmer_temperature
+      - sensor.schlafzimmer_temperature      
     hours_to_show: 48
     refresh: 60
 
@@ -112,3 +118,4 @@ script: !include config/scripts.yaml
 sensor: !include config/sensors.yaml
 #variable: !include config/variable.yaml
 device_tracker: !include config/device_tracker.yaml
+zone: !include config/zones.yaml

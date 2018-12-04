@@ -1,4 +1,5 @@
-# Groups
+# Home Assiatnt Groups
+# Mattias@Welponer.net
 
 # Views
 home:
@@ -8,14 +9,32 @@ home:
   entities:
     - group.wetter
     - group.balkon
+    - group.balkon_graph
     - group.wohnung
     - group.wohnzimmer
     - group.schlafzimmer
     - group.kinderzimmer
     - group.badezimmer
     - group.kueche
-
+    - group.server_ping
+  
+   
 # Groups
+server_ping:
+  name: Server Ping
+  entities:
+    - device_tracker.router
+    - device_tracker.igray
+    - device_tracker.iblue
+    - device_tracker.igreen
+    - device_tracker.iwhite
+
+balkon_graph:
+  name: Balkon Temperatur
+  entities: 
+    - history_graph.balkon_temperatur
+    - history_graph.wohnung_temperatur
+
 wetter:
   entities:
     - weather.darksky_graz
@@ -30,12 +49,13 @@ wohnung:
   name: Wohnung
   entities:
     - alarm_control_panel.internal
-    - alarm_control_panel.external
+#    - alarm_control_panel.external
     - light.gang_licht
     - binary_sensor.wohnungstuer
     - binary_sensor.gang_smoke
+    - binary_sensor.gang_2
     - sensor.gang_illuminance
-    - binary_sensor.gang_motion
+    - binary_sensor.gang
 
 wohnzimmer:
   name: Wohnzimmer

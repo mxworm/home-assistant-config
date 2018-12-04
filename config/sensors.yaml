@@ -1,4 +1,8 @@
-# Sensors
+# Home Assistant Sensors
+# Mattias@Welponer.net
+
+#- platform: miflora
+#  mac: ''
 
 - platform: speedtest
   minute:
