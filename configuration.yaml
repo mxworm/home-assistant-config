@@ -5,7 +5,7 @@ logger:
   default: warning
   logs:
     homeassistant.components.homematicip_cloud: info
-    homeassistant.components.device_tracker: debug
+    homeassistant.components.device_tracker: info
 
 # Configuration
 homeassistant:
@@ -106,14 +106,25 @@ history_graph:
     name: Wohnung Temperatur
     entities:
       - sensor.wohnzimmer_temperature
-      - sensor.kinderzimmer_temperature
       - sensor.schlafzimmer_temperature      
+      - sensor.kinderzimmer_temperature
+      - sensor.kueche_temperature
+    hours_to_show: 48
+    refresh: 60
+  heating_graph:
+    name: Wohnung Heating
+    entities:
+      - sensor.wohnzimmer_heating
+      - sensor.schlafzimmer_heating
+      - sensor.kinderzimmer_heating
+      - sensor.kueche_heating      
     hours_to_show: 48
     refresh: 60
 
 
 group: !include config/groups.yaml
 automation: !include config/automations.yaml
+automation old: !include config/automations_old.yaml
 script: !include config/scripts.yaml
 sensor: !include config/sensors.yaml
 #variable: !include config/variable.yaml
