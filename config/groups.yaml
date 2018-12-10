@@ -7,30 +7,49 @@ home:
   view: yes
   icon: mdi:home
   entities:
-    - group.wetter
+#    - group.wetter
     - group.balkon
-    - group.balkon_graph
     - group.wohnung
     - group.wohnzimmer
     - group.schlafzimmer
     - group.kinderzimmer
     - group.badezimmer
     - group.kueche
-    - group.server_ping
-  
-   
+    - group.graph
+
+system:
+  name: System
+  view: yes
+  entities:  
+    - group.tracker_mattias 
+    - group.tracker_martina
+    - group.ping_server
+       
 # Groups
-server_ping:
+tracker_mattias:
+  name: Tracker
+  entities:
+    - device_tracker.tile_p2af7e9a8ea4e91be17370568f1864032 
+    - device_tracker.tile_3149aafa970892c6
+    - device_tracker.tile_317419e4e99eb1b4
+    - device_tracker.tile_bb812f82d7f4b42e
+    - device_tracker.tile_c73649305efbbde1
+
+tracker_martina:
+  name: Martina Tracker
+  entities:
+    - device_tracker.tile_pe94961aac66ff4409fa1b6c1f219ac48
+    
+ping_server:
   name: Server Ping
   entities:
-    - device_tracker.router
-    - device_tracker.igray
-    - device_tracker.iblue
-    - device_tracker.igreen
-    - device_tracker.iwhite
+    - device_tracker.ping_router
+    - device_tracker.ping_igray
+    - device_tracker.ping_iblue
+    - device_tracker.ping_igreen
+    - device_tracker.ping_iwhite
 
-balkon_graph:
-  name: Balkon Temperatur
+graph:
   entities: 
     - history_graph.balkon_temperatur
     - history_graph.wohnung_temperatur
@@ -113,7 +132,7 @@ info:
     - sensor.access_point
     - sensor.current_version
 
-system:
+info_system:
   name: Infos
   entities:
     - sensor.speedtest_download
