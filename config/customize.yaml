@@ -16,7 +16,8 @@ group.badezimmer:
   order: 7
 group.kueche:
   order: 8
-
+group.graph:
+  order: 9
 
 light.wohnzimmer_licht:
   extra_data_template: "${attributes.power_consumption !== undefined ? (attributes.power_consumption + 'W') : ''}"
