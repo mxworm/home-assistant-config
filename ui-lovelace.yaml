@@ -1,0 +1,115 @@
+resources:
+  - url: /local/vertical-stack-in-card.js?v=0.0.9
+    type: js
+    
+
+views:
+  # View tab title.
+  - title: Home
+    id: home
+    theme: dark-mode
+    cards:
+      - title: Balkon
+        type: glance
+        show_name: false
+        entities:
+          - sensor.balkon_temperature
+          - sensor.balkon_humidity
+
+      - title: Wohnung
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: glance
+            show_name: false
+            entities:
+              - entity: binary_sensor.gang
+                secondary_info: last-changed
+              - sensor.gang_illuminance
+              - binary_sensor.gang_2
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - light.gang_licht
+ 
+ 
+      - title: Wohnzimmer
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: glance
+            show_name: false
+            entities:
+              - sensor.wohnzimmer_temperature
+              - sensor.wohnzimmer_humidity
+              - sensor.wohnzimmer_heating          
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - light.wohnzimmer_licht
+              - climate.wohnzimmer
+    
+
+      - title: Schlafzimmer
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: glance
+            show_name: false
+            entities:
+              - sensor.schlafzimmer_temperature
+              - sensor.schlafzimmer_humidity
+              - sensor.schlafzimmer_heating
+          - type: entities
+            entities:
+              - climate.schlafzimmer
+          
+      - title: Kinderzimmer
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: glance
+            show_name: false
+            entities:
+              - sensor.kinderzimmer_temperature
+              - sensor.kinderzimmer_humidity
+              - sensor.kinderzimmer_heating
+          - type: entities
+            entities:  
+              - climate.kinderzimmer
+
+      - title: Küche
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: glance
+            show_name: false
+            entities:
+              - sensor.kueche_temperature
+              - sensor.kueche_humidity
+              - sensor.kueche_heating
+          - type: entities
+            entities:  
+              - climate.kueche
+
+      - title: Badezimmer
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: glance
+            show_name: false
+            entities:
+              - sensor.badezimmer_temperature
+              - sensor.badezimmer_humidity
+              - sensor.badezimmer_heating
+          - type: entities
+            entities:  
+              - climate.badezimmer
+  
+      - title: Balkon
+        type: history-graph
+        entities: 
+          - sensor.balkon_temperature
+
+      - title: Zimmer
+        type: history-graph
+        entities: 
+          - sensor.wohnzimmer_temperature
+          - sensor.schlafzimmer_temperature
+          - sensor.kinderzimmer_temperature
+          - sensor.kueche_temperature
+          
