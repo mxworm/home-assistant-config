@@ -39,7 +39,9 @@ tracker_martina:
   name: Martina Tracker
   entities:
     - device_tracker.tile_pe94961aac66ff4409fa1b6c1f219ac48
-    
+    - device_tracker.tile_p45af62671770f875a4c634a7fa67b187 
+    - device_tracker.tile_acd5ac9b8f802a5f
+       
 ping_server:
   name: Server Ping
   entities:

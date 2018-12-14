@@ -21,20 +21,25 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Vienna
   # Customization file
-  customize: !include config/customize.yaml
-  customize_glob: !include config/customize-ui.yaml
+#  customize: !include config/customize.yaml
+#  customize_glob: !include config/customize-ui.yaml
 
 # Enables the frontend
 frontend:
-  extra_html_url:
-    - /local/custom_ui/state-card-custom-ui.html
-  extra_html_url_es5:
-    - /local/custom_ui/state-card-custom-ui-es5.html
-  themes:
-    happy:
-      primary-color: pink
-    sad:
-      primary-color: blue
+#  javascript_version: latest
+#  extra_html_url:
+#    - /local/custom_ui/state-card-custom-ui.html
+#  extra_html_url_es5:
+#    - /local/custom_ui/state-card-custom-ui-es5.html
+#  themes:
+#    happy:
+#      primary-color: pink
+#    sad:
+#      primary-color: blue
+
+
+lovelace:
+  mode: yaml
 
 # Enables configuration UI
 config:
