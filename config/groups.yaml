@@ -2,7 +2,8 @@
 # Mattias@Welponer.net
 
 # Views
-home:
+default_view:
+#home:
   name: Wohnung
   view: yes
   icon: mdi:home
