@@ -53,7 +53,7 @@ ping_server:
 
 graph:
   entities: 
-    - history_graph.balkon_temperatur
+#    - history_graph.balkon_temperatur
     - history_graph.wohnung_temperatur
 
 wetter:
@@ -81,13 +81,14 @@ wohnung:
 wohnzimmer:
   name: Wohnzimmer
   entities:
-    - light.wohnzimmer_licht
-    - climate.wohnzimmer
     - sensor.wohnzimmer_temperature
     - sensor.wohnzimmer_humidity
+    - light.wohnzimmer_licht
+    - light.wohnzimmer_farblicht
+    - climate.wohnzimmer
     - sensor.wohnzimmer_heating
-    - sensor.wohnizmmer_illuminance
-    - sensor.wohnzimmer_motion
+    - sensor.wohnzimmer_illuminance
+    - binary_sensor.wohnzimmer
 
 kinderzimmer:
   name: Kinderzimmer

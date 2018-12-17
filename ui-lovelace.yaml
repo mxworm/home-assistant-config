@@ -1,14 +1,65 @@
+# Home Assistant Configuration
+
 resources:
   - url: /local/vertical-stack-in-card.js?v=0.0.9
     type: js
+  - url: /local/circle-sensor-card.js?v=0
+    type: module    
+  - url: /local/tracker-card.js?v=0
+    type: js
+  - url: /local/alarm_control_panel-card.js?v=2
+    type: js
+  - url: /local/bignumber-card.js?v=2
+    type: js
     
-
+    
 views:
-  # View tab title.
   - title: Home
     id: home
     theme: dark-mode
     cards:
+#      - type: custom:bignumber-card
+#        title: Humidity
+#        entity: sensor.balkon_humidity
+#        scale: 30px
+#        from: bottom
+#        min: 0
+#        max: 100
+#        severity:
+#          - value: 70
+#            style: 'var(--label-badge-green)'
+#          - value: 90
+#            style: 'var(--label-badge-yellow)'
+#          - value: 100
+#            style: 'var(--label-badge-red)'
+      
+      - title: Balkon
+        #type: horizontal-stack
+        type: glance
+        #type: entities
+        name: Balkon
+        entities:
+#          - type: custom:bignumber-card
+#            title: Humidity
+#            entity: sensor.balkon_humidity
+#            scale: 30px
+#          - type: custom:bignumber-card
+#            title: Temperatur
+#            entity: sensor.balkon_temperature
+#            scale: 30px
+          - type: custom:circle-sensor-card
+            entity: sensor.balkon_temperature
+            max: 40
+            min: -20
+            font_style:
+              font-size: 2em
+          - type: custom:circle-sensor-card
+            entity: sensor.balkon_humidity
+            max: 100
+            min: 0
+            font_style:
+              font-size: 2em
+   
       - title: Balkon
         type: glance
         show_name: false
@@ -30,8 +81,7 @@ views:
             show_header_toggle: false
             entities:
               - light.gang_licht
- 
- 
+  
       - title: Wohnzimmer
         type: custom:vertical-stack-in-card
         cards:
@@ -47,7 +97,6 @@ views:
               - light.wohnzimmer_licht
               - climate.wohnzimmer
     
-
       - title: Schlafzimmer
         type: custom:vertical-stack-in-card
         cards:
@@ -100,16 +149,25 @@ views:
             entities:  
               - climate.badezimmer
   
-      - title: Balkon
+#      - title: Balkon
+#        type: history-graph
+#        entities: 
+
+      - title: Graph
         type: history-graph
         entities: 
           - sensor.balkon_temperature
-
-      - title: Zimmer
-        type: history-graph
-        entities: 
           - sensor.wohnzimmer_temperature
           - sensor.schlafzimmer_temperature
           - sensor.kinderzimmer_temperature
           - sensor.kueche_temperature
           
+  - title: System
+    id: system
+    theme: dark-mode
+    cards:
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker

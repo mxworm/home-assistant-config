@@ -21,16 +21,16 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Vienna
   # Customization file
-#  customize: !include config/customize.yaml
-#  customize_glob: !include config/customize-ui.yaml
+  customize: !include config/customize.yaml
+  customize_glob: !include config/customize-ui.yaml
 
 # Enables the frontend
 frontend:
 #  javascript_version: latest
-#  extra_html_url:
-#    - /local/custom_ui/state-card-custom-ui.html
-#  extra_html_url_es5:
-#    - /local/custom_ui/state-card-custom-ui-es5.html
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 #  themes:
 #    happy:
 #      primary-color: pink
@@ -53,6 +53,9 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   include_used_components: true
 
+custom_updater:
+  show_installable: true
+  
 # Discover some devices automatically
 discovery:
 
@@ -110,6 +113,7 @@ history_graph:
   wohnung_graph:
     name: Wohnung Temperatur
     entities:
+      - sensor.balkon_temperature
       - sensor.wohnzimmer_temperature
       - sensor.schlafzimmer_temperature      
       - sensor.kinderzimmer_temperature
