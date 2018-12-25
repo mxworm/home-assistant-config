@@ -6,6 +6,9 @@ logger:
   logs:
     homeassistant.components.homematicip_cloud: info
     homeassistant.components.device_tracker: info
+    homeassistant.components.automation: debug
+    homeassistant.components.automation_old: debug
+    homeassistant.components.input_boolean: debug
 
 # Configuration
 homeassistant:
@@ -30,7 +33,7 @@ frontend:
     - /local/custom_ui/state-card-custom-ui.html
   extra_html_url_es5:
     - /local/custom_ui/state-card-custom-ui-es5.html
-  themes: !include themes.yaml
+  themes: !include_dir_merge_named themes
 
 #lovelace:
 #  mode: yaml
@@ -133,3 +136,39 @@ sensor: !include config/sensors.yaml
 #variable: !include config/variable.yaml
 device_tracker: !include config/device_tracker.yaml
 zone: !include config/zones.yaml
+
+
+binary_sensor:
+  - platform: template
+    sensors:
+      presence_itiger:
+        device_class: presence
+        value_template: >
+          {% set loc = states('device_tracker.itiger') %}
+          {{ 'Home' if loc == 'home' else 'Away' if loc == 'not_home' else loc }}
+      presence_home:
+        friendly_name: People Home
+        device_class: presence
+        value_template: >
+          {{ is_state('device_tracker.itiger', 'home') or
+             is_state('device_tracker.iworm', 'home') }}
+
+input_boolean:
+  mode_home:
+    name: Home
+    initial: on
+    icon: mdi:account-multiple
+  mode_guest:
+    name: Guest
+    initial: off
+    icon: mdi:account-multiple
+
+#input_select:
+#  home_mode:
+#    name: Home Mode
+#    icon: mdi:home-account
+#    options:
+#      - Home
+#      - Away
+#      - Returning
+      

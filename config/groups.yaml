@@ -8,7 +8,6 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-#    - group.wetter
     - group.balkon
     - group.wohnung
     - group.wohnzimmer
@@ -16,15 +15,23 @@ default_view:
     - group.kinderzimmer
     - group.badezimmer
     - group.kueche
+    - group.presence
+    
+graphs:
+  name: Graphs
+  view: yes
+  entities:
     - group.graph
+  
 
 system:
   name: System
   view: yes
   entities:  
-    - group.tracker_mattias 
-    - group.tracker_martina
+#    - group.tracker_mattias 
+#    - group.tracker_martina
     - group.ping_server
+
        
 # Groups
 tracker_mattias:
@@ -67,6 +74,16 @@ balkon:
     - sensor.balkon_temperature
     - sensor.balkon_humidity
 
+presence:
+  name: Presence
+  entities:
+    - input_boolean.mode_home    
+    - input_boolean.mode_guest
+    - binary_sensor.presence_itiger
+    - device_tracker.itiger
+    - device_tracker.iworm
+    - binary_sensor.presence_home
+
 wohnung:
   name: Wohnung
   entities:
@@ -82,11 +99,11 @@ wohnung:
 wohnzimmer:
   name: Wohnzimmer
   entities:
-    - sensor.wohnzimmer_temperature
-    - sensor.wohnzimmer_humidity
     - light.wohnzimmer_licht
     - light.wohnzimmer_farblicht
     - climate.wohnzimmer
+    - sensor.wohnzimmer_temperature
+    - sensor.wohnzimmer_humidity
     - sensor.wohnzimmer_heating
     - sensor.wohnzimmer_illuminance
     - binary_sensor.wohnzimmer

@@ -2,13 +2,35 @@
 
 - platform: ping
   hosts:
-    router: 10.0.0.1
-    igray: 10.0.0.10
-    iblue: 10.0.0.11
+    ping_router: 10.0.0.1
+    ping_igray: 10.0.0.10
+    ping_iblue: 10.0.0.11
 
 - platform: bluetooth_le_tracker
   track_new_devices: True
 
-- platform: tile
-  username: !secret tile_user
-  password: !secret tile_password
+#- platform: tile
+#  username: !secret tile_user
+#  password: !secret tile_password
+
+#- platform: tile
+#  username: !secret tile2_user
+#  password: !secret tile2_password
+
+- platform: icloud2
+  username: !secret icloud_user
+  password: !secret icloud_password
+  gps_accuracy_threshold: 500
+#  max_interval: 15
+  filter_devices: 'iworm'
+- platform: icloud2
+  username: !secret icloud_user
+  password: !secret icloud_password
+  gps_accuracy_threshold: 500
+#  max_interval: 15
+  filter_devices: 'itiger'
+  
+#- platform: icloud
+#  username: !secret icloud2_user
+#  password: !secret icloud2_password
+
