@@ -15,13 +15,13 @@ default_view:
     - group.kinderzimmer
     - group.badezimmer
     - group.kueche
-    - group.presence
     
 graphs:
   name: Graphs
   view: yes
   entities:
-    - group.graph
+    - group.graph_wohnung
+    - group.graph_balkon
   
 
 system:
@@ -30,8 +30,10 @@ system:
   entities:  
 #    - group.tracker_mattias 
 #    - group.tracker_martina
+    - group.speedtest
+    - group.presence
     - group.ping_server
-
+    - group.wallpanel
        
 # Groups
 tracker_mattias:
@@ -59,10 +61,21 @@ ping_server:
     - device_tracker.ping_igreen
     - device_tracker.ping_iwhite
 
-graph:
+wallpanel:
+  name: WallPanel
+  entities:
+    - camera.wallpanel
+    - sensor.wallpanel_battery_level
+    - binary_sensor.wallpanel_motion
+    - binary_sensor.wallpanel_face
+    
+graph_wohnung:
   entities: 
-#    - history_graph.balkon_temperatur
     - history_graph.wohnung_temperatur
+
+graph_balkon:
+  entities: 
+    - history_graph.balkon_temperatur
 
 wetter:
   entities:
@@ -153,12 +166,12 @@ info:
     - sensor.access_point
     - sensor.current_version
 
-info_system:
-  name: Infos
+speedtest:
+  name: Speedtest
   entities:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping
-    - sensor.disk_use_percent_
-    - sensor.processor_use
-    - sensor.last_boot
+#    - sensor.disk_use_percent_
+#    - sensor.processor_use
+#    - sensor.last_boot

@@ -9,7 +9,8 @@ logger:
     homeassistant.components.automation: debug
     homeassistant.components.automation_old: debug
     homeassistant.components.input_boolean: debug
-
+    homeassistant.components.mqtt: debug
+    
 # Configuration
 homeassistant:
   # Name of the location where Home Assistant is running
@@ -46,9 +47,9 @@ config:
 #   base_url: example.duckdns.org:8123
 
 # Checks for available updates
-updater:
+# updater:
   # Optional, allows Home Assistant developers to focus on popular components.
-  include_used_components: true
+#  include_used_components: true
 
 #custom_updater:
 #  show_installable: true
@@ -88,10 +89,10 @@ weather:
     api_key: !secret darksky_key
     mode: daily
 
-#camera:
-#  - platform: generic
-#    still_image_url: https://icons.wxug.com/data/weather-maps/radar/united-states/cadillac-michigan-region-current-radar-animation.gif
-#    name: Midwest Radar
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://10.0.0.41:2971/camera/stream
+    name: WallPanel
 
 # Text to speech
 tts:
@@ -99,6 +100,9 @@ tts:
 
 # Cloud
 cloud:
+
+mqtt:
+  password: !secret mqtt_passwort
 
 history_graph:
   balkon_graph:
@@ -110,7 +114,6 @@ history_graph:
   wohnung_graph:
     name: Wohnung Temperatur
     entities:
-      - sensor.balkon_temperature
       - sensor.wohnzimmer_temperature
       - sensor.schlafzimmer_temperature      
       - sensor.kinderzimmer_temperature
@@ -133,25 +136,10 @@ automation: !include config/automations.yaml
 automation old: !include config/automations_old.yaml
 script: !include config/scripts.yaml
 sensor: !include config/sensors.yaml
-#variable: !include config/variable.yaml
+binary_sensor: !include config/binary_sensors.yaml
 device_tracker: !include config/device_tracker.yaml
 zone: !include config/zones.yaml
 
-
-binary_sensor:
-  - platform: template
-    sensors:
-      presence_itiger:
-        device_class: presence
-        value_template: >
-          {% set loc = states('device_tracker.itiger') %}
-          {{ 'Home' if loc == 'home' else 'Away' if loc == 'not_home' else loc }}
-      presence_home:
-        friendly_name: People Home
-        device_class: presence
-        value_template: >
-          {{ is_state('device_tracker.itiger', 'home') or
-             is_state('device_tracker.iworm', 'home') }}
 
 input_boolean:
   mode_home:

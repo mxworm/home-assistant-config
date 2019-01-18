@@ -4,6 +4,42 @@
 #- platform: miflora
 #  mac: ''
 
+- platform: mqtt
+  state_topic: "wallpanel/mywallpanel/sensor/battery"
+  name: "WallPanel Battery Level"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.value }}'
+    
+- platform: mqtt
+  state_topic: "wallpanel/mywallpanel/sensor/temperature"
+  name: "WallPanel Temperature"
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "wallpanel/mywallpanel/sensor/light"
+  name: "WallPanel Light Level"
+  unit_of_measurement: "lx"
+  value_template: '{{ value_json.value }}'
+    
+- platform: mqtt
+  state_topic: "wallpanel/mywallpanel/sensor/magneticField"
+  name: "WallPanel Magnetic Field"
+  unit_of_measurement: "uT"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "wallpanel/mywallpanel/sensor/pressure"
+  name: "WallPanel Pressure"
+  unit_of_measurement: "hPa"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "wallpanel/mywallpanel/sensor/qrcode"
+  name: "WallPanel QR Code"
+  value_template: '{{ value_json.value }}'
+    
+
 - platform: speedtest
   minute:
     - 2
