@@ -66,7 +66,7 @@ ping_server:
 wallpanel:
   name: WallPanel
   entities:
-    - camera.wallpanel
+#    - camera.wallpanel
     - sensor.wallpanel_battery_level
     - binary_sensor.wallpanel_motion
     - binary_sensor.wallpanel_face
@@ -103,7 +103,7 @@ wohnung:
   name: Wohnung
   entities:
     - alarm_control_panel.internal
-#    - alarm_control_panel.external
+    - alarm_control_panel.external
     - light.gang_licht
     - binary_sensor.wohnungstuer
     - binary_sensor.gang_smoke

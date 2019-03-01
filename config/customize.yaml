@@ -8,16 +8,14 @@ group.balkon:
   order: 3
 group.wohnzimmer:
   order: 4
-group.schlafzimmer:
-  order: 5
-group.kinderzimmer:
-  order: 6
-group.badezimmer:
-  order: 7
-group.kueche:
-  order: 8
-group.graph:
-  order: 9
+#group.schlafzimmer:
+#  order: 5
+#group.kinderzimmer:
+#  order: 6
+#group.badezimmer:
+#  order: 7
+#group.kueche:
+#  order: 8
 
 light.wohnzimmer_licht:
   extra_data_template: "${attributes.power_consumption !== undefined ? (attributes.power_consumption + 'W') : ''}"
