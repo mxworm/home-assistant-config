@@ -11,7 +11,8 @@ resources:
     type: js
   - url: /local/bignumber-card.js?v=2
     type: js
-    
+  - url: /local/simple-thermostat.js?v=1
+    type: module    
     
 views:
   - title: Home
