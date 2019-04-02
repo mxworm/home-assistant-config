@@ -1,8 +1,10 @@
 # Home Assistant Sensors
 # Mattias@Welponer.net
 
-#- platform: miflora
-#  mac: ''
+- platform: miflora
+  mac: 'c4:7c:8d:67:10:cf'
+  name: 'Schefflera'
+  median: 1
 
 - platform: mqtt
   state_topic: "wallpanel/mywallpanel/sensor/battery"
@@ -39,7 +41,6 @@
   name: "WallPanel QR Code"
   value_template: '{{ value_json.value }}'
     
-
 - platform: speedtest
   minute:
     - 2

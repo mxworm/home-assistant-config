@@ -39,6 +39,8 @@ frontend:
 #lovelace:
 #  mode: yaml
 
+hassio:
+
 # Enables configuration UI
 config:
 
@@ -141,14 +143,18 @@ sensor: !include config/sensors.yaml
 binary_sensor: !include config/binary_sensors.yaml
 device_tracker: !include config/device_tracker.yaml
 zone: !include config/zones.yaml
-
+plant: !include config/plant.yaml
 
 input_boolean:
-  mode_home:
+  presence_sw_home:
     name: Home
-    initial: on
-    icon: mdi:account-multiple
-  mode_guest:
+    initial: off
+    icon: mdi:account-off-outline
+  presence_sw_away:
+    name: Away
+    initial: off
+    icon: mdi:account-off-outline
+  presence_sw_guests:
     name: Guest
     initial: off
     icon: mdi:account-multiple

@@ -20,14 +20,11 @@
 - platform: icloud2
   username: !secret icloud_user
   password: !secret icloud_password
-#  gps_accuracy_threshold: 500
-#  max_interval: 15
   filter_devices: 'iworm'
+
 - platform: icloud2
   username: !secret icloud_user
   password: !secret icloud_password
-#  gps_accuracy_threshold: 500
-#  max_interval: 15
   filter_devices: 'itiger'
   
 #- platform: icloud
