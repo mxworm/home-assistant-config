@@ -1,6 +1,26 @@
 # Home Assistant Sensors
 # Mattias@Welponer.net
 
+- platform: rest
+  resource: http://ip.jsontest.com
+  name: "External IP"
+  value_template: '{{ value_json.ip }}'
+
+- platform: rest
+  resource: http://10.0.0.31:10009/get/status
+  name: "Robart Mode"
+  value_template: '{{ value_json.mode }}'
+
+- platform: rest
+  resource: http://10.0.0.31:10009/get/status
+  name: "Robart Charging"
+  value_template: '{{ value_json.charging }}'
+
+- platform: rest
+  resource: http://10.0.0.31:10009/get/status
+  name: "Robart Battery"
+  value_template: '{{ value_json.battery_level }}'
+
 - platform: miflora
   mac: 'c4:7c:8d:67:10:cf'
   name: 'Schefflera'

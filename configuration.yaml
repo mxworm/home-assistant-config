@@ -145,11 +145,22 @@ device_tracker: !include config/device_tracker.yaml
 zone: !include config/zones.yaml
 plant: !include config/plant.yaml
 
+
+#switch:
+#  - platform: rest
+#    resource: http://10.0.0.31:10009/set/stop
+#    body_on: '{"cmd_id": "2"}'
+#    body_off: '{"active": "false"}'
+#    is_on_template: '{{ value_json.is_active }}'
+#    headers:
+#      Content-Type: application/json
+
+
 input_boolean:
   presence_sw_home:
     name: Home
     initial: off
-    icon: mdi:account-off-outline
+    icon: mdi:account-multiple
   presence_sw_away:
     name: Away
     initial: off

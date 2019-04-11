@@ -17,12 +17,12 @@
 #  username: !secret tile2_user
 #  password: !secret tile2_password
 
-- platform: icloud2
+- platform: icloud3
   username: !secret icloud_user
   password: !secret icloud_password
   filter_devices: 'iworm'
 
-- platform: icloud2
+- platform: icloud3
   username: !secret icloud_user
   password: !secret icloud_password
   filter_devices: 'itiger'
