@@ -4,12 +4,13 @@
 logger:
   default: warning
   logs:
-    homeassistant.components.homematicip_cloud: info
-    homeassistant.components.device_tracker: info
-    homeassistant.components.automation: debug
-    homeassistant.components.automation_old: debug
-    homeassistant.components.input_boolean: debug
-    homeassistant.components.mqtt: debug
+#    homeassistant.components.homematicip_cloud: info
+#    homeassistant.components.device_tracker: info
+#    homeassistant.components.automation: debug
+#    homeassistant.components.automation_old: debug
+#    homeassistant.components.input_boolean: debug
+#    homeassistant.components.mqtt: info
+    custom_components.robart: debug
     
 # Configuration
 homeassistant:
@@ -82,6 +83,11 @@ map:
 # Track the sun
 sun:
 
+# Vacuum
+vacuum:
+  - platform: robart
+    host: 10.0.0.31
+
 # Weather prediction
 weather:
   - platform: yweather
@@ -97,8 +103,8 @@ camera:
     name: WallPanel
 
 # Text to speech
-tts:
-  - platform: google
+#tts:
+#  - platform: google
 
 # Cloud
 cloud:

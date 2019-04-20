@@ -5,7 +5,8 @@
 !*.yaml
 !.gitignore
 !*.md
-!custom_components
+!*.py
+!custom_components/icloud3/device_tracker.py
 
 # Ignore folders.
 .storage
