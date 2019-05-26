@@ -6,8 +6,8 @@
     ping_igray: 10.0.0.10
     ping_iblue: 10.0.0.11
 
-- platform: bluetooth_le_tracker
-  track_new_devices: True
+#- platform: bluetooth_le_tracker
+#  track_new_devices: True
 
 #- platform: tile
 #  username: !secret tile_user
@@ -26,6 +26,11 @@
   username: !secret icloud_user
   password: !secret icloud_password
   filter_devices: 'itiger'
+
+- platform: icloud3
+  username: !secret icloud_user
+  password: !secret icloud_password
+  filter_devices: 'ishaf'
   
 #- platform: icloud
 #  username: !secret icloud2_user

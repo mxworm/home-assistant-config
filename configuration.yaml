@@ -4,13 +4,14 @@
 logger:
   default: warning
   logs:
-#    homeassistant.components.homematicip_cloud: info
+    homeassistant.components.homematicip_cloud: warning
 #    homeassistant.components.device_tracker: info
 #    homeassistant.components.automation: debug
 #    homeassistant.components.automation_old: debug
 #    homeassistant.components.input_boolean: debug
 #    homeassistant.components.mqtt: info
-    custom_components.robart: debug
+    custom_components.robart: warning
+    custom_components.moosefs: debug
     
 # Configuration
 homeassistant:
@@ -28,6 +29,9 @@ homeassistant:
   # Customization file
   customize: !include config/customize.yaml
   customize_glob: !include config/customize-ui.yaml
+  # Include Packages
+  packages: !include_dir_named packages
+
 
 # Enables the frontend
 frontend:
@@ -40,7 +44,7 @@ frontend:
 #lovelace:
 #  mode: yaml
 
-hassio:
+#hassio:
 
 # Enables configuration UI
 config:
@@ -87,11 +91,27 @@ sun:
 vacuum:
   - platform: robart
     host: 10.0.0.31
+  - platform: xiaomi_miio
+    host: 10.0.0.51
+    token: !secret xiaomi_vacuum
+
+speedtestdotnet:
+  scan_interval:
+    minutes: 15
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+media_player:
+  - platform: enigma2
+    host: 10.0.0.14
+    password: regit
 
 # Weather prediction
 weather:
-  - platform: yweather
-    name: Graz
+#  - platform: yweather
+#    name: Graz
   - platform: darksky
     name: darksky_graz
     api_key: !secret darksky_key

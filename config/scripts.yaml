@@ -1,1 +1,11 @@
-# Skripts
+# Scripts
+
+vacuum_bedroom:
+  alias: "Vacuum Bedroom"
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.xiaomi_vacuum_cleaner
+        command: app_zoned_clean
+        params: [[24000,30000,30500,35000,1]]          
+
