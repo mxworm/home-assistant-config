@@ -1,6 +1,45 @@
 # Home Assistant Sensors
 # Mattias@Welponer.net
 
+- platform: darksky
+  api_key: !secret darksky_key
+  language: de
+  units: si
+  forecast:
+    - 0
+    - 1 
+    - 2
+    - 3
+    - 4
+  hourly_forecast:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5 
+  monitored_conditions:
+    - summary
+    - icon
+    - temperature
+    - cloud_cover
+    - temperature_high
+    - temperature_low
+    - nearest_storm_distance
+      
+      
+- platform: template
+  sensors:
+    boiler_energy_kwh:
+      value_template: '{{ states.switch.boiler.attributes.today_energy_kwh | float }}'
+      unit_of_measurement: 'kWh'
+    wohnzimmerlicht_energy_kwh:
+      value_template: '{{ states.light.wohnzimmer_licht.attributes.energy_counter_kwh | float }}'
+      unit_of_measurement: 'kWh'
+    ganglicht_energy_kwh:
+      value_template: '{{ states.light.gang_licht.attributes.energy_counter_kwh | float }}'
+      unit_of_measurement: 'kWh'
+
 - platform: moosefs
   resources:
     - type: chunks_stable
@@ -26,7 +65,12 @@
   value_template: '{{ value_json.battery_level }}'
 
 - platform: miflora
-  mac: 'c4:7c:8d:67:10:cf'
+  mac: 'C4:7C:8D:67:10:CF'
+  name: 'Benjaminficus'
+  median: 1
+
+- platform: miflora
+  mac: 'C4:7C:8D:67:0E:DF'
   name: 'Schefflera'
   median: 1
 

@@ -2,35 +2,59 @@
 
 - platform: ping
   hosts:
-    ping_router: 10.0.0.1
-    ping_igray: 10.0.0.10
-    ping_iblue: 10.0.0.11
-
+    router_local: 10.0.0.1
+    igray_local: 10.0.0.10
+    iblue_local: 10.0.0.11
+    iwhite_local: 10.0.0.12
+    egray_extern: egray.mxnode.net
+    eblue_extern: eblue.mxnode.net
+    igray_vpn: 172.16.25.10
+    iwhite_vpn: 172.16.25.12
+    egray_vpn: 172.16.25.1
+    eblue_vpn: 172.16.25.2
+    harmony_local: 10.0.0.4
+    vuultimo_loca: 10.0.0.9
+    
 #- platform: bluetooth_le_tracker
 #  track_new_devices: True
 
-#- platform: tile
-#  username: !secret tile_user
-#  password: !secret tile_password
+- platform: tile
+  username: !secret tile_user
+  password: !secret tile_password
 
-#- platform: tile
-#  username: !secret tile2_user
-#  password: !secret tile2_password
+- platform: tile
+  username: !secret tile2_user
+  password: !secret tile2_password
 
-- platform: icloud3
-  username: !secret icloud_user
-  password: !secret icloud_password
-  filter_devices: 'iworm'
-
-- platform: icloud3
-  username: !secret icloud_user
-  password: !secret icloud_password
-  filter_devices: 'itiger'
+#- platform: icloud
+#  username: !secret icloud_user
+#  password: !secret icloud_password  
+#  filter_devices: 'iworm'
 
 - platform: icloud3
   username: !secret icloud_user
   password: !secret icloud_password
-  filter_devices: 'ishaf'
+#  filter_devices: 'itiger'
+  include_device_types: 
+    - iphone
+#    - ipad
+#    - mac
+#    - macbook    
+#    - mac book
+#    - macbook pro
+#  inzone_interval: 15
+#  stationary_still_time: 60
+ 
+#- platform: icloud3
+#  username: !secret icloud2_user
+#  password: !secret icloud2_password
+#  include_device_types: 
+#    - iphone
+#    - ipad
+#    - mac
+#    - macbook    
+#  inzone_interval: 15
+#  stationary_still_time: 60
   
 #- platform: icloud
 #  username: !secret icloud2_user

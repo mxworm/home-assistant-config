@@ -11,7 +11,8 @@ logger:
 #    homeassistant.components.input_boolean: debug
 #    homeassistant.components.mqtt: info
     custom_components.robart: warning
-    custom_components.moosefs: debug
+    custom_components.moosefs: warning
+    custom_components.device_tracker.icloud3: debug
     
 # Configuration
 homeassistant:
@@ -87,6 +88,34 @@ map:
 # Track the sun
 sun:
 
+# Meter
+utility_meter:
+  boiler_energy_kwh_hourly:
+    source: sensor.boiler_energy_kwh
+    cycle: hourly
+  boiler_energy_kwh_daily:
+    source: sensor.boiler_energy_kwh
+    cycle: daily
+  boiler_energy_kwh_weekly:
+    source: sensor.boiler_energy_kwh
+    cycle: weekly
+  boiler_energy_kwh_monthly:
+    source: sensor.boiler_energy_kwh
+    cycle: monthly
+  wohnzimmerlicht_energy_kwh_hourly:
+    source: sensor.wohnzimmerlicht_energy_kwh
+    cycle: hourly
+  wohnzimmerlicht_energy_kwh_daily:
+    source: sensor.wohnzimmerlicht_energy_kwh
+    cycle: daily
+  wohnzimmerlicht_energy_kwh_weekly:
+    source: sensor.wohnzimmerlicht_energy_kwh
+    cycle: weekly
+  wohnzimmerlicht_energy_kwh_monthly:
+    source: sensor.wohnzimmerlicht_energy_kwh
+    cycle: monthly
+
+
 # Vacuum
 vacuum:
   - platform: robart
@@ -94,6 +123,7 @@ vacuum:
   - platform: xiaomi_miio
     host: 10.0.0.51
     token: !secret xiaomi_vacuum
+
 
 speedtestdotnet:
   scan_interval:
@@ -105,8 +135,13 @@ speedtestdotnet:
 
 media_player:
   - platform: enigma2
-    host: 10.0.0.14
+    host: 10.0.0.9
     password: regit
+
+remote:
+  - platform: harmony
+    name: Living
+    host: 10.0.0.4
 
 # Weather prediction
 weather:
@@ -119,7 +154,7 @@ weather:
 
 camera:
   - platform: mjpeg
-    mjpeg_url: http://10.0.0.43:2971/camera/stream
+    mjpeg_url: http://10.0.0.31:2971/camera/stream
     name: WallPanel
 
 # Text to speech

@@ -6,7 +6,7 @@
 !.gitignore
 !*.md
 !*.py
-!custom_components/icloud3/device_tracker.py
+!custom_components/*/*
 
 # Ignore folders.
 .storage

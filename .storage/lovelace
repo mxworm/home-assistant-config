@@ -1,0 +1,1030 @@
+{
+    "data": {
+        "config": {
+            "resources": [
+                {
+                    "type": "js",
+                    "url": "/local/kiosk.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/simple-thermostat.js?v=1"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/circle-sensor-card.js?v=0"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/tracker-card.js?v=0"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/alarm_control_panel-card.js?v=2"
+                },
+                {
+                    "type": "js",
+                    "url": "/local/bignumber-card.js?v=2"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/mini-graph-card-bundle.js?v=0.3.2"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/button-card.js"
+                }
+            ],
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "elements": [
+                                {
+                                    "entity": "script.vacuum_living_bed",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:robot-vacuum",
+                                    "style": {
+                                        "left": "75%",
+                                        "top": "50%"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.vacuum_living_bed"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "script.vacuum_living",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:robot-vacuum",
+                                    "style": {
+                                        "left": "70%",
+                                        "top": "60%"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.vacuum_living"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "script.vacuum_bed",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:robot-vacuum",
+                                    "style": {
+                                        "left": "70%",
+                                        "top": "35%"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.vacuum_bed"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "script.vacuum_corridor",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:robot-vacuum",
+                                    "style": {
+                                        "left": "55%",
+                                        "top": "45%"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.vacuum_corridor"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "script.vacuum_children",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:robot-vacuum",
+                                    "style": {
+                                        "left": "55%",
+                                        "top": "25%"
+                                    },
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.vacuum_children"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "vacuum.xiaomi_vacuum_cleaner",
+                                    "style": {
+                                        "left": "40%",
+                                        "top": "85%"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_0d",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "5%",
+                                        "top": "15%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_1d",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "10%",
+                                        "top": "15%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_2d",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "15%",
+                                        "top": "15%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_3d",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "20%",
+                                        "top": "15%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_4d",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "25%",
+                                        "top": "15%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_0h",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "5%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_1h",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "7%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_2h",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "9%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_3h",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "11%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_4h",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "13%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.dark_sky_summary_5h",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "15%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "binary_sensor.presence_home",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "55%",
+                                        "top": "75%"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "light.gang_licht",
+                                    "style": {
+                                        "left": "55%",
+                                        "top": "60%"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "vacuum.xiaomi_vacuum_cleaner",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "62%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "vacuum.robart",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "25%",
+                                        "top": "52%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "binary_sensor.gang",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "45%",
+                                        "top": "45%"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "binary_sensor.wohnungstuer",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "51%",
+                                        "top": "80%"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "climate.badezimmer",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "45%",
+                                        "top": "55%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.badezimmer_temperature",
+                                    "style": {
+                                        "left": "45%",
+                                        "top": "65%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.badezimmer_humidity",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "50%",
+                                        "top": "65%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.badezimmer_heating",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "45%",
+                                        "top": "70%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "climate.kueche",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "25%",
+                                        "top": "60%"
+                                    },
+                                    "title": "None",
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.kueche_temperature",
+                                    "style": {
+                                        "left": "30%",
+                                        "top": "60%"
+                                    },
+                                    "title": "None",
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.kueche_humidity",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "35%",
+                                        "top": "60%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.kueche_heating",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "40%",
+                                        "top": "55%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "binary_sensor.water_sensor",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "35%",
+                                        "top": "68%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "climate.kinderzimmer",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "40%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.kinderzimmer_temperature",
+                                    "style": {
+                                        "left": "45%",
+                                        "top": "20%"
+                                    },
+                                    "title": "None",
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.kinderzimmer_humidity",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "50%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.kinderzimmer_heating",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "34%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.balkon_temperature",
+                                    "style": {
+                                        "left": "15%",
+                                        "top": "60%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.balkon_humidity",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "15%",
+                                        "top": "70%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "climate.wohnzimmer",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "70%",
+                                        "top": "80%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmer_temperature",
+                                    "style": {
+                                        "left": "75%",
+                                        "top": "80%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmer_humidity",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "80%",
+                                        "top": "80%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmer_heating",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "86%",
+                                        "top": "63%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmer_heating_2",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "86%",
+                                        "top": "82%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "binary_sensor.wohnzimmer",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "68%",
+                                        "top": "50%"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmer_illuminance",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "65%",
+                                        "top": "50%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "light.wohnzimmer_licht",
+                                    "style": {
+                                        "left": "80%",
+                                        "top": "60%"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "light.wohnzimmer_farblicht",
+                                    "style": {
+                                        "left": "65%",
+                                        "top": "60%"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "state-icon"
+                                },
+                                {
+                                    "entity": "climate.schlafzimmer",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "70%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.schlafzimmer_temperature",
+                                    "style": {
+                                        "left": "75%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.schlafzimmer_humidity",
+                                    "style": {
+                                        "font-size": "10px",
+                                        "left": "80%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "sensor.schlafzimmer_heating",
+                                    "style": {
+                                        "font-size": "5px",
+                                        "left": "86%",
+                                        "top": "20%"
+                                    },
+                                    "type": "state-badge"
+                                },
+                                {
+                                    "entity": "light.schlafzimmer_licht",
+                                    "style": {
+                                        "left": "80%",
+                                        "top": "35%"
+                                    },
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "type": "state-icon"
+                                }
+                            ],
+                            "image": "/local/floorplan_v04.png",
+                            "type": "picture-elements"
+                        }
+                    ],
+                    "id": "Floorplan_kiosk",
+                    "panel": true,
+                    "theme": "Backend-selected",
+                    "title": "Floorplan"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entity": "sensor.balkon_temperature",
+                                    "name": "Balkon",
+                                    "type": "sensor"
+                                },
+                                {
+                                    "entity": "sensor.balkon_humidity",
+                                    "name": "Balkon",
+                                    "type": "sensor"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entity": "weather.darksky_graz",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                "light.wohnzimmer_licht",
+                                "light.wohnzimmer_farblicht",
+                                "sensor.wohnzimmer_temperature",
+                                "sensor.wohnzimmer_humidity",
+                                "sensor.wohnzimmer_heating",
+                                "sensor.wohnzimmer_illuminance"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Wohnzimmer",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.gang_licht"
+                                },
+                                {
+                                    "entity": "binary_sensor.wohnungstuer"
+                                },
+                                {
+                                    "entity": "binary_sensor.gang_smoke"
+                                },
+                                {
+                                    "entity": "sensor.gang_illuminance"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Wohnung",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "alarm_control_panel.hmip_alarm_control_panel",
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "entity": "climate.wohnzimmer",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "sensor.schlafzimmer_temperature",
+                                "sensor.schlafzimmer_humidity",
+                                "sensor.schlafzimmer_heating"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Schlafzimmer",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "climate.schlafzimmer",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "switch.kinderzimmer_nachtlicht",
+                                "sensor.kinderzimmer_temperature",
+                                "sensor.kinderzimmer_humidity",
+                                "sensor.kinderzimmer_heating"
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Kinderzimmer",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "climate.kinderzimmer",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "sensor.badezimmer_temperature",
+                                "sensor.badezimmer_humidity",
+                                "sensor.badezimmer_heating"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Badezimmer",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "climate.badezimmer",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "sensor.kueche_temperature",
+                                "sensor.kueche_humidity",
+                                "sensor.kueche_heating",
+                                "binary_sensor.water_sensor"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "K\u00fcche",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "plant.schefflera",
+                            "type": "plant-status"
+                        },
+                        {
+                            "entity": "plant.benjaminficus",
+                            "type": "plant-status"
+                        },
+                        {
+                            "entity": "climate.kueche",
+                            "type": "thermostat"
+                        }
+                    ],
+                    "icon": "",
+                    "panel": false,
+                    "path": "default_view",
+                    "title": "Wohnung"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "vacuum.xiaomi_vacuum_cleaner"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "vacuum.robart"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.robart_mode"
+                                },
+                                {
+                                    "entity": "sensor.robart_charging"
+                                },
+                                {
+                                    "entity": "sensor.robart_battery"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Robert K\u00fcche",
+                            "type": "entities"
+                        }
+                    ],
+                    "panel": false,
+                    "title": "Vacuum"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.wohnzimmer_temperature",
+                                "sensor.schlafzimmer_temperature",
+                                "sensor.kinderzimmer_temperature",
+                                "sensor.kueche_temperature"
+                            ],
+                            "hours_to_show": 48,
+                            "refresh_interval": 60,
+                            "title": "Wohnung Temperatur",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                "sensor.balkon_temperature"
+                            ],
+                            "hours_to_show": 48,
+                            "refresh_interval": 60,
+                            "title": "Balkon Temperatur",
+                            "type": "history-graph"
+                        }
+                    ],
+                    "path": "graphs",
+                    "title": "Graphs"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.access_point"
+                                },
+                                {
+                                    "entity": "sensor.current_version"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "HomeAssistant",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.last_boot"
+                                },
+                                {
+                                    "entity": "sensor.memory_free"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Server",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.speedtest_download",
+                                "sensor.speedtest_upload",
+                                "sensor.speedtest_ping"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Speedtest",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.router_local"
+                                },
+                                {
+                                    "entity": "device_tracker.igray_local"
+                                },
+                                {
+                                    "entity": "device_tracker.iwhite_local"
+                                },
+                                {
+                                    "entity": "device_tracker.iblue_local"
+                                },
+                                {
+                                    "entity": "device_tracker.igray_virtual"
+                                },
+                                {
+                                    "entity": "device_tracker.iwhite_virtual"
+                                },
+                                {
+                                    "entity": "device_tracker.egray_virtual"
+                                },
+                                {
+                                    "entity": "device_tracker.eblue_virtual"
+                                },
+                                {
+                                    "entity": "device_tracker.egray"
+                                },
+                                {
+                                    "entity": "device_tracker.eblue"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Server Ping",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.wallpanel_battery_level",
+                                "binary_sensor.wallpanel_motion",
+                                "binary_sensor.wallpanel_face"
+                            ],
+                            "show_header_toggle": false,
+                            "title": "WallPanel",
+                            "type": "entities"
+                        }
+                    ],
+                    "path": "system",
+                    "title": "System"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "default_zoom": 15,
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.iworm"
+                                },
+                                {
+                                    "entity": "device_tracker.itiger"
+                                }
+                            ],
+                            "title": "Mobiles",
+                            "type": "map"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.presence_sw_home"
+                                },
+                                {
+                                    "entity": "input_boolean.presence_sw_away"
+                                },
+                                {
+                                    "entity": "device_tracker.itiger"
+                                },
+                                {
+                                    "entity": "device_tracker.iworm"
+                                },
+                                {
+                                    "entity": "binary_sensor.presence_home"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Presence",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.gang"
+                                },
+                                {
+                                    "entity": "binary_sensor.wohnzimmer"
+                                },
+                                {
+                                    "entity": "binary_sensor.wallpanel_motion"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Motion",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Presence"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.network_in_enp0s25"
+                                }
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.schachtel_battery"
+                                }
+                            ],
+                            "title": "Security",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.moosefs_stable"
+                                },
+                                {
+                                    "entity": "sensor.moosefs_undergoal"
+                                },
+                                {
+                                    "entity": "sensor.moosefs_missing"
+                                },
+                                {
+                                    "entity": "sensor.moosefs_pending_deletion"
+                                },
+                                {
+                                    "entity": "sensor.moosefs_to_be_removed"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "MooseFS",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.living",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.enigma2_media_player",
+                            "type": "media-control"
+                        }
+                    ],
+                    "panel": false,
+                    "title": "Info"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.boiler_energy_kwh"
+                                },
+                                {
+                                    "entity": "sensor.boiler_energy_kwh_hourly"
+                                },
+                                {
+                                    "entity": "sensor.boiler_energy_kwh_daily"
+                                },
+                                {
+                                    "entity": "sensor.boiler_energy_kwh_weekly"
+                                },
+                                {
+                                    "entity": "sensor.boiler_energy_kwh_monthly"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Energy",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.wohnzimmerlicht_energy_kwh"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmerlicht_energy_kwh_hourly"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmerlicht_energy_kwh_daily"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmerlicht_energy_kwh_weekly"
+                                },
+                                {
+                                    "entity": "sensor.wohnzimmerlicht_energy_kwh_monthly"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "script.restart_hass",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "icon": "mdi:restart",
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "call-service"
+                            },
+                            "type": "entity-button"
+                        }
+                    ],
+                    "title": "Test"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}
