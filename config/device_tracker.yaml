@@ -2,18 +2,18 @@
 
 - platform: ping
   hosts:
-    router_local: 10.0.0.1
-    igray_local: 10.0.0.10
-    iblue_local: 10.0.0.11
-    iwhite_local: 10.0.0.12
+    router_lan: 10.0.0.1
+    igray_lan: 10.0.0.10
+    iblue_lan: 10.0.0.11
+    iwhite_lan: 10.0.0.12
     egray_extern: egray.mxnode.net
     eblue_extern: eblue.mxnode.net
     igray_vpn: 172.16.25.10
     iwhite_vpn: 172.16.25.12
     egray_vpn: 172.16.25.1
     eblue_vpn: 172.16.25.2
-    harmony_local: 10.0.0.4
-    vuultimo_loca: 10.0.0.9
+    harmony_lan: 10.0.0.4
+    vuultimo_lan: 10.0.0.9
     
 #- platform: bluetooth_le_tracker
 #  track_new_devices: True
@@ -43,7 +43,7 @@
 #    - mac book
 #    - macbook pro
 #  inzone_interval: 15
-#  stationary_still_time: 60
+  stationary_still_time: 360
  
 #- platform: icloud3
 #  username: !secret icloud2_user
