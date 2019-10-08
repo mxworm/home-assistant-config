@@ -2,18 +2,13 @@
 
 - platform: ping
   hosts:
-    router_lan: 10.0.0.1
-    igray_lan: 10.0.0.10
-    iblue_lan: 10.0.0.11
-    iwhite_lan: 10.0.0.12
-    egray_extern: egray.mxnode.net
-    eblue_extern: eblue.mxnode.net
-    igray_vpn: 172.16.25.10
-    iwhite_vpn: 172.16.25.12
     egray_vpn: 172.16.25.1
     eblue_vpn: 172.16.25.2
-    harmony_lan: 10.0.0.4
-    vuultimo_lan: 10.0.0.9
+    igray_vpn: 172.16.25.10
+    igray_lan: 10.0.0.10
+    iwhite_vpn: 172.16.25.12
+    iwhite_lan: 10.0.0.12
+    worm13_vpn: 172.16.25.100
     
 #- platform: bluetooth_le_tracker
 #  track_new_devices: True
@@ -31,19 +26,23 @@
 #  password: !secret icloud_password  
 #  filter_devices: 'iworm'
 
-- platform: icloud3
-  username: !secret icloud_user
-  password: !secret icloud_password
+#- platform: icloud3
+#  account_name: mattias_icloud
+#  username: !secret icloud_user
+#  password: !secret icloud_password
+#  track_devices:
+#    - iworm > mattias.welponer@me.com, test.png
+    
 #  filter_devices: 'itiger'
-  include_device_types: 
-    - iphone
+#  include_device_types: 
+#    - iphone
 #    - ipad
 #    - mac
 #    - macbook    
 #    - mac book
 #    - macbook pro
 #  inzone_interval: 15
-  stationary_still_time: 360
+#  stationary_still_time: 360
  
 #- platform: icloud3
 #  username: !secret icloud2_user

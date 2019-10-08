@@ -1,6 +1,13 @@
 # Home Assistant Sensors
 # Mattias@Welponer.net
 
+- platform: cert_expiry
+  host: welponer.net
+
+- platform: cert_expiry
+  host: mxnode.net
+
+
 - platform: darksky
   api_key: !secret darksky_key
   language: de

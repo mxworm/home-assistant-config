@@ -1,0 +1,14 @@
+- id: '1570563591285'
+  alias: New Automation
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.presence_home
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - device_id: 5f50b0cbdafc4e298d1a4045678e0d2a
+    domain: light
+    entity_id: light.wohnzimmer_farblicht
+    type: toggle

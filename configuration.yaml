@@ -47,6 +47,9 @@ frontend:
 
 #hassio:
 
+hacs:
+  token: 8fb5e8398cbe1e432fb0f88a988fe2485371e097
+
 # Enables configuration UI
 config:
 
@@ -75,6 +78,7 @@ conversation:
 recorder:
   purge_interval: 1
   purge_keep_days: 90
+#  db_url: mysql://hass:ha55@localhost/hass
 
 # Enables support for tracking state changes over time
 history:
@@ -115,6 +119,8 @@ utility_meter:
     source: sensor.wohnzimmerlicht_energy_kwh
     cycle: monthly
 
+
+zeroconf:
 
 # Vacuum
 vacuum:
@@ -194,11 +200,18 @@ history_graph:
       - sensor.kueche_heating      
     hours_to_show: 48
     refresh: 60
+  boiler_graph:
+    name: Boiler
+    entities:
+      - sensor.boiler_energy_kwh_hourly
+      - sensor.boiler_energy_kwh_daily
+    hours_to_show: 480
+    refresh: 60
 
 
 group: !include config/groups.yaml
-automation: !include config/automations.yaml
-automation old: !include config/automations_old.yaml
+automation: !include automations.yaml
+#automation old: !include config/automations_old.yaml
 script: !include config/scripts.yaml
 sensor: !include config/sensors.yaml
 binary_sensor: !include config/binary_sensors.yaml

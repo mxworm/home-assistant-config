@@ -33,6 +33,10 @@
                 {
                     "type": "module",
                     "url": "/local/button-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
                 }
             ],
             "title": "Home",
@@ -802,34 +806,16 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "device_tracker.router_local"
+                                    "entity": "device_tracker.igray_vpn"
                                 },
                                 {
-                                    "entity": "device_tracker.igray_local"
+                                    "entity": "device_tracker.iwhite_vpn"
                                 },
                                 {
-                                    "entity": "device_tracker.iwhite_local"
+                                    "entity": "device_tracker.egray_vpn"
                                 },
                                 {
-                                    "entity": "device_tracker.iblue_local"
-                                },
-                                {
-                                    "entity": "device_tracker.igray_virtual"
-                                },
-                                {
-                                    "entity": "device_tracker.iwhite_virtual"
-                                },
-                                {
-                                    "entity": "device_tracker.egray_virtual"
-                                },
-                                {
-                                    "entity": "device_tracker.eblue_virtual"
-                                },
-                                {
-                                    "entity": "device_tracker.egray"
-                                },
-                                {
-                                    "entity": "device_tracker.eblue"
+                                    "entity": "device_tracker.eblue_vpn"
                                 }
                             ],
                             "show_header_toggle": false,
@@ -845,6 +831,11 @@
                             "show_header_toggle": false,
                             "title": "WallPanel",
                             "type": "entities"
+                        },
+                        {
+                            "aspect_ratio": "50%",
+                            "type": "iframe",
+                            "url": "http://10.0.0.10:8123/local/tinc.png"
                         }
                     ],
                     "path": "system",
@@ -1018,9 +1009,52 @@
                                 "action": "call-service"
                             },
                             "type": "entity-button"
+                        },
+                        {
+                            "hold_action": {
+                                "action": "none"
+                            },
+                            "image": "/local/tinc_mxnode.png",
+                            "tap_action": {
+                                "action": "none"
+                            },
+                            "type": "picture"
+                        },
+                        {
+                            "entities": [
+                                "sensor.boiler_energy_kwh_daily",
+                                "sensor.boiler_energy_kwh_weekly"
+                            ],
+                            "hours_to_show": 500,
+                            "refresh_interval": 60,
+                            "title": "Boiler",
+                            "type": "history-graph"
+                        },
+                        {
+                            "hold_action": {
+                                "action": "none"
+                            },
+                            "image": "/local/tinc_mxnode.png",
+                            "tap_action": {
+                                "action": "none"
+                            },
+                            "type": "picture"
                         }
                     ],
                     "title": "Test"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "aspect_ratio": "50%",
+                            "type": "iframe",
+                            "url": "http://igray.mxnode.net:8123/local/tinc.png"
+                        }
+                    ],
+                    "panel": true,
+                    "path": "vpn",
+                    "title": "VPN"
                 }
             ]
         }
